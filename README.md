@@ -35,10 +35,10 @@ git clone https://github.com/gbrinkhaus/project-templates.git
    ./setup.sh
    ```
    
-   The script will:
-   - Ask if you want Flask-specific agent context
-   - Ask if you want to disconnect from the template repo (.git removal)
-   - Configure your project with base agents and optional framework additions
+   The script will guide you through:
+   - **Step 1:** Copy core agents (Q, S, P, D) to your project
+   - **Step 2:** Optional—add Flask environment with framework-specific agents and project scaffold
+   - **Step 3:** Optional—disconnect from the template repo and clean up
 
 4. **Initialize your own git repo**:
    ```sh
@@ -49,37 +49,49 @@ git clone https://github.com/gbrinkhaus/project-templates.git
 
 ---
 
-## Usage Instructions
+## What You Get After Setup
 
-### Agent Triggers
+### ✅ Agent Configuration
+After running setup, your `.github/agents/` folder contains:
+- **Q-quality.md** - Code structure, testing, refactoring
+- **S-security.md** - Secrets, injection, auth, dependencies
+- **P-performance.md** - Algorithms, database queries, caching, async
+- **D-deployment.md** - Config, CI/CD, logging, containers, migrations
 
-Use the specialized agents by prefixing your message in Copilot Chat with:
+### ✅ Framework Scaffold (if Flask selected)
+If you chose Flask during setup, your project also includes:
+- **app/** - Application structure with blueprints template
+- **docker-compose.yml** - Docker setup for local development
+- **Framework-specific agent contexts** - Added to each agent file
 
-- *Q* - Code Quality review
-- *S* - Security audit
-- *P* - Performance analysis
-- *D* - Deployment readiness check
+---
+
+## Using the Specialized Agents
+
+Each agent is a separate file in `.github/agents/`. Open the file you need in your editor:
+
+### How It Works
+
+1. When you need a specific agent review, **open its file** in your editor
+2. Copilot will read only that focused agent guidance (not the entire instruction set)
+3. Ask your question - Copilot will apply that agent's specialized perspective
+4. Close the file when done
 
 ### Examples
 
 ```
-*Q* review this function for maintainability
+# Open .github/agents/Q-quality.md, then ask:
+Review this function for code smells and maintainability issues
 
-*S* audit this authentication code for vulnerabilities
+# Open .github/agents/S-security.md, then ask:
+Audit this authentication code for vulnerabilities
 
-*P* optimize this database query
+# Open .github/agents/P-performance.md, then ask:
+Optimize this database query
 
-*D* is this ready for production?
+# Open .github/agents/D-deployment.md, then ask:
+Is this application ready for production?
 ```
-
-### What Each Agent Does
-
-| Agent | Focus | Example |
-|-------|-------|----------|
-| *Q* | Code structure, testing, refactoring | "Check for dead code and suggest improvements" |
-| *S* | Secrets, injection, auth, dependencies | "Verify no hardcoded credentials" |
-| *P* | Algorithms, database queries, caching, async | "Identify N+1 queries" |
-| *D* | Config, CI/CD, logging, containers, migrations | "Verify production readiness" |
 
 ---
 
@@ -89,7 +101,11 @@ Use the specialized agents by prefixing your message in Copilot Chat with:
 project-templates/
 ├── core/
 │   ├── agents/
-│   │   └── copilot-instructions.md       # Base + 4 specialized agents
+│   │   ├── README.md                     # How to use agents
+│   │   ├── Q-quality.md                  # Code quality agent
+│   │   ├── S-security.md                 # Security agent
+│   │   ├── P-performance.md              # Performance agent
+│   │   └── D-deployment.md               # Deployment agent
 │   └── vscode/
 │       └── tasks.json                     # Development tasks
 ├── frameworks/

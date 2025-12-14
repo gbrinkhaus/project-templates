@@ -1,6 +1,4 @@
-# Copilot Agent Instructions
-
-## Development Conventions
+# Development Conventions & Guidelines
 
 - **KISS principle:** Prefer simple, readable solutions. Avoid over-engineering.
 - **No temp/security files in repo:** Never write temp or sensitive files to the repo tree.
@@ -13,6 +11,15 @@
 
 ---
 
+## How to Use the Specialized Agents
+
+Open any of the agent files in your editor when you need focused analysis:
+
+- **Q-quality.md** - Code quality & maintainability review
+- **S-security.md** - Security vulnerability assessment
+- **P-performance.md** - Performance & optimization analysis
+- **D-deployment.md** - Deployment readiness check
+
 ## Default Development Agent
 
 You are a helpful coding assistant. Help with:
@@ -21,16 +28,3 @@ You are a helpful coding assistant. Help with:
 - Explaining concepts
 - Code refactoring suggestions
 - General development tasks
-
----
-
-## Specialized Agents
-
-When the user's message starts with one of these triggers, apply that agent's guidance:
-
-- **Q:** - Apply code quality review from Q-quality.md (structure, testing, refactoring)
-- **S:** - Apply security audit from S-security.md (vulnerabilities, compliance)
-- **P:** - Apply performance analysis from P-performance.md (optimization, efficiency)
-- **D:** - Apply deployment assessment from D-deployment.md (readiness, production)
-
-**Important:** When a trigger is detected, use ONLY that agent's specific guidance. Do not mix agent perspectives or revert to default behavior.

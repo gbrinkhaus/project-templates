@@ -1,11 +1,7 @@
-# Flask-Specific Agent Additions
+# Flask-Specific Project Context
 
-## Project Overview (News Agent)
-- **Purpose:** Collect, rate, and rewrite daily AI-related news using a Flask web app with a service/repository architecture.
-- **Main entrypoint:** `app.py` (Flask app, routes, dependency injection)
-- **Core logic:** `core/` (repositories, services, models, DI container)
-- **Config:** `config/config.py` and `config/templates/queries.yaml`
-- **Database:** SQLite, schema managed in `core/db.py` (see `init_db()`)
+## Project Overview 
+- **Purpose:** Put app purpose here
 
 ## Architecture & Patterns
 - **Dependency Injection:** All business logic and data access is managed via the `Container` class (`core/container.py`). Always use the container to access services and repositories.
@@ -23,37 +19,18 @@
 - **Fresh install:** `core/db.py` ensures DB and schema are created if missing.
 
 ## Conventions & Practices
-- **Flags:** Article votes/flags are stored as single-character codes in the `flags` column (e.g., 'U', 'D', 'W'). U and D are mutually exclusive.
-- **Integration Points:** Uses `feedparser`, `openai`, and `pyyaml` (see `requirements.txt`).
-- **App data dir:** Platform-specific, see `get_app_data_dir()` in `core/db.py`.
+- **App data dir:** Platform-specific, set via `get_app_data_dir()` in `core/db.py`.
 
 ## Examples
-- **Accessing a service:** `container.article_service.list_articles_for_display(...)`
 - **Adding a migration:** Place script in `scripts/migration/`, update `core/db.py` for fresh installs only.
 
 ---
 
-## Code Quality Agent - Flask Additions (*Q*):
-- Verify Dependency Injection via `Container` class is used properly
-- Ensure Repository Pattern is followed (no direct SQL or `core/db.py` in business logic)
-- Check Service Layer for single-responsibility principle
-- Validate MVC separation (routes = controller, services = logic, templates = view)
+## Specialized Agent Additions for Flask
 
-## Security Agent - Flask Additions (*S*):
-- Check for `DEBUG = False` in production configs
-- Verify SECRET_KEY is from environment variable
-- Check for SQL injection (especially if bypassing Repository Pattern)
-- Verify CORS configuration isn't too permissive
-- Validate flag logic (U/D/W codes) doesn't expose vulnerabilities
+When using the specialized agents, also reference the Flask-specific additions:
 
-## Performance Agent - Flask Additions (*P*):
-- Ensure using Gunicorn/uWSGI in production, not `flask run`
-- Check for N+1 queries in Repository/Service layers
-- Verify database connection pooling is configured
-- Optimize external API calls (`feedparser`, `openai`)
-
-## Deployment Agent - Flask Additions (*D*):
-- Verify health check endpoint exists
-- Check for proper logging configuration
-- Ensure migrations are automated and working
-- Verify `./run.sh` and Waitress configuration is correct
+- **Q-quality-additions.md** - Flask code quality checks
+- **S-security-additions.md** - Flask security checks
+- **P-performance-additions.md** - Flask performance checks
+- **D-deployment-additions.md** - Flask deployment checks
