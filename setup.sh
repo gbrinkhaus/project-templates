@@ -15,7 +15,7 @@ setup_core() {
   echo ""
   echo "📋 Copying Core Agents..."
   mkdir -p .github/agents .vscode
-  cp core/agents/copilot-instructions.md .github/
+  cp copilot-instructions.md .github/
   cp -r core/agents/{Q,S,P,D}-*.md .github/agents/
   cp core/agents/README.md .github/agents/
   cp core/vscode/tasks.json .vscode/
@@ -28,8 +28,8 @@ setup_flask() {
   echo "🔧 Setting up Flask Environment..."
   echo ""
   echo "  📎 Adding Flask-specific agent contexts..."
-  echo "" >> .github/copilot-instructions.md
-  cat frameworks/flask/agent-additions.md >> .github/copilot-instructions.md
+  echo "" >> copilot-instructions.md
+  cat frameworks/flask/agent-additions.md >> copilot-instructions.md
   cp frameworks/flask/*additions.md .github/agents/
   echo "  ✓ Agent contexts updated"
   echo ""

@@ -1,10 +1,11 @@
+```instructions
 # Copilot Agent Instructions
 
 ## Development Conventions
 
 - **KISS principle:** Prefer simple, readable solutions. Avoid over-engineering.
 - **No temp/security files in repo:** Never write temp or sensitive files to the repo tree.
-- **Document function intent:** Use clear docstrings for all functions.
+- **Document function intent:** Use clear docstrings for all functions. Keep them concise and short, max 2 sentences.
 - **Use Bootstrap & FontAwesome:** For all UI and icons.
 - **MVC separation:** Routes = controller, services = logic, templates = view.
 - **CSS/JS separation:** Put js + css in separate files, not inline in HTML templates.
@@ -34,3 +35,5 @@ When the user's message starts with one of these triggers, apply that agent's gu
 - **D:** - Apply deployment assessment from D-deployment.md (readiness, production)
 
 **Important:** When a trigger is detected, use ONLY that agent's specific guidance. Do not mix agent perspectives or revert to default behavior.
+
+```
