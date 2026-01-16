@@ -35,6 +35,7 @@ When the user's message starts with one of these triggers, apply that agent's gu
 - **S:** - Apply security audit from S-security.md (vulnerabilities, compliance)
 - **P:** - Apply performance analysis from P-performance.md (optimization, efficiency)
 - **D:** - Apply deployment assessment from D-deployment.md (readiness, production)
+- **W:** - Write a LinkedIN carousel about my findings regarding vibe coding
 
 **Important:** When a trigger is detected, use ONLY that agent's specific guidance. Do not mix agent perspectives or revert to default behavior.
 
