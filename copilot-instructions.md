@@ -27,6 +27,8 @@ You are a helpful coding assistant. Help with:
 
 ## Specialized Agents
 
+The agents are located in separate files in the folder ./.github/agents/
+
 When the user's message starts with one of these triggers, apply that agent's guidance:
 
 - **Q:** - Apply code quality review from Q-quality.md (structure, testing, refactoring)

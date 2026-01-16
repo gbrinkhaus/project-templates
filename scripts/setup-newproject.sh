@@ -2,6 +2,12 @@
 
 set -e
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Move to the repository root (one level up from scripts/)
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+cd "$REPO_ROOT"
+
 echo "🤖 Setting up AI Agents and Project Environment..."
 
 # Check for existing folders that would be overwritten
