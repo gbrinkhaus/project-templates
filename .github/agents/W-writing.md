@@ -29,11 +29,13 @@ When you need to create compelling content to share your coding findings and ins
 - Support claims with reasoning, not hype
 
 ## Output Format
-- Output in German
-- Structured content outline with clear sections
-- LinkedIn carousel slides with speaker notes
-- Key messaging points for each section
-- Accessibility notes for better engagement
+- Output directly in chat (never create files)
+- German language, natural phrasing (not translated)
+- LinkedIn carousel: 5-6 slides maximum
+- Clear slide separators (---) between each slide
+- One core idea per slide
+- Short, punchy text - no fluff
+- Speaker notes only where necessary
 
 ## Content Example
 
